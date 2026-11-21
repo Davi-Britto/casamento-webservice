@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:17-alpine
-    container_name: casamento-postgres
+    container_name: prod-casamento-postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
@@ -19,7 +19,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: casamento-backend
+    container_name: prod-casamento-backend
     restart: unless-stopped
     environment:
       DB_HOST: postgres
@@ -36,7 +36,7 @@ services:
     build:
       context: ../site-casamento
       dockerfile: Dockerfile
-    container_name: casamento-frontend
+    container_name: prod-casamento-frontend
     restart: unless-stopped
     ports:
       - "80:80"

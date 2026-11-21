@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:17-alpine
-    container_name: casamento-postgres
+    container_name: dev-casamento-postgres
     restart: unless-stopped
     ports:
       - "127.0.0.1:${POSTGRES_PORT}:5432"
